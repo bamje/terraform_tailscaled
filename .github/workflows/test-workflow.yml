@@ -18,9 +18,9 @@ jobs:
             
         -   name: plan terraform
             run: |
-                ssh pebbles@dev 
-                cd $HOME/workflows
-                git pull
-                age -d -i $SOPS_AGE_KEY_FILE vars.enc > vars.tf
-                terraform plan -out tfplan
+                ssh pebbles@dev.opaleye-trout.ts.net
+                # cd $HOME/workflows
+                # git pull
+                # age -d -i $SOPS_AGE_KEY_FILE vars.enc > vars.tf
+                # terraform plan -out tfplan
             
