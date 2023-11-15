@@ -1,0 +1,67 @@
+# Proxmox interaction variables
+variable "pve_token" {
+    description = "terraform "
+    type = string
+    default = "your_api_key"
+}
+
+variable "pve_user" {
+    description = "api key user"
+    type = string
+    default = "terraform@pam!terraform" 
+}
+
+# this is the api url telmate provider connects to, just change the ip with your pve node ip. remember to add /api2/json at the end for the API
+variable "pve_url" {
+    description = "proxmox url"
+    type = string
+    default = "https://your_pve_ip_or_fqdn/api2/json/"
+}
+
+variable "pve_host" {
+    description = "pve ip"
+    type = string
+    default = "your_pve_ip"
+}
+
+variable "pve_ssh_key" {
+    description = "ssh key used to connect to pve"
+    type = string
+    default = ""
+}
+
+# the name of your pve node
+variable "pve_node" {
+    description = "target node name, for example pve"
+    type = string
+    default = ""
+}
+
+# the name of the template you are going to use, cloud images with qemu-guest-agent are required for proxmox + terraform
+variable "pve_template" {
+    description = "target template name to clone"
+    type = string
+    default = ""
+}
+
+variable "ssh_user" {
+    description = "ssh user used for provisioners connection block"
+    type = string
+    default = ""
+}
+
+variable "pvt_key" {
+    description = "ssh key for provisioners connection block"
+    type = string
+    default = "path to ssh key" 
+}
+
+variable "default_gateway" {
+    type = string
+    default = "default gateway ip"  
+}
+
+variable "vm_count" {
+    type = string
+    default = ""
+}
