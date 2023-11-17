@@ -19,7 +19,7 @@ jobs:
         -   name: plan terraform
             run: |
                 ssh -o "StrictHostKeyChecking no" pebbles@dev.opaleye-trout.ts.net "
-                cd $HOME/workflows
+                cd /home/pebbles/workflows
                 git pull
                 age -d -i $SOPS_AGE_KEY_FILE vars.enc > vars.tf
                 terraform plan -out tfplan
