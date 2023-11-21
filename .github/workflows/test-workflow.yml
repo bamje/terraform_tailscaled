@@ -20,8 +20,12 @@ jobs:
             run: |
                 ssh -o "StrictHostKeyChecking no" pebbles@dev.opaleye-trout.ts.net "
                 cd /home/pebbles/workflows
-                git pull
+                git clone
+                cd terraform_tailscaled
                 age -d -i $SOPS_AGE_KEY_FILE vars.enc > vars.tf
+                terraform init
                 terraform plan -out tfplan
+                cd ..
+                rm -rf terraform_tailscaled
                 "
             
